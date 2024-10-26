@@ -1,5 +1,6 @@
 from glob import glob
 from os import mkdir
+from shutil import move
 
 
 def sorter():
@@ -10,17 +11,16 @@ def sorter():
 
     dirs_and_fts = {'docs': ['txt', 'rtf', 'docx'],
                     'imgs': ['jpg', 'png', 'gif']}
-    dirs = {k: [] for k in dirs_and_fts}
 
     for d, fts in dirs_and_fts.items():
-        for l in [glob('*.' + ft) for ft in fts]:
-            dirs[d].extend(l)
+        for files in [glob('*.' + ft) for ft in fts]:
             try:
                 mkdir(d)
             except FileExistsError:
                 pass
+            for file in files:
+                move(file, d)
 
 
-
-
-sorter()
+if __name__ == "__main__":
+    sorter()
