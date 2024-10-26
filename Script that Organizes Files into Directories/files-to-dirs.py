@@ -15,8 +15,12 @@ def sorter():
     for d, fts in dirs_and_fts.items():
         for l in [glob('*.' + ft) for ft in fts]:
             dirs[d].extend(l)
+            try:
+                mkdir(d)
+            except FileExistsError:
+                pass
 
-    print(dirs)
+
 
 
 sorter()
