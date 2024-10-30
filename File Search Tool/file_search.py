@@ -12,7 +12,7 @@ def search():
     path = ''
     while not path:
         path = input('Please enter directory path to search: ')
-        if not os.path.exists(path):
+        if not os.path.isdir(path):
             path = ''
             print('Please enter existing directory')
 
@@ -20,16 +20,11 @@ def search():
     while not term:
         term = input('Please enter the search term or file extension: ')
 
-    if term.startswith('.'):
-        path = os.path.join(path, '*' + term)
-    else:
-        path = os.path.join(path, term + '.*')
-
-    result = glob(path)
+    result = glob(os.path.join(path, '*' + term + '*'))
 
     if result:
         print('Files matching your search: ')
-        [print(file) for file in glob(path)]
+        [print(file) for file in result]
     else:
         print('No files matching your search')
 
