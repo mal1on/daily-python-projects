@@ -4,10 +4,12 @@ from shutil import move
 
 
 def sorter():
-    '''Python script that organizes files in a directory into folders
+    '''
+    Python script that organizes files in a directory into folders
     based on file type. For example, all .txt files go into a
     "Text Files" folder, all .jpg and .png files go into an "Images"
-    folder, and so on.'''
+    folder, and so on.
+    '''
 
     dir_to_organize = ''
     while not dir_to_organize:

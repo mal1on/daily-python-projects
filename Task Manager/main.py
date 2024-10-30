@@ -1,8 +1,8 @@
-'''Console-based task manager app where users can add, complete,
- and view tasks'''
-
-
 class Task:
+    '''
+    Console-based task manager app where users can add, complete,
+    and view tasks
+    '''
 
     def __init__(self, description):
         self.description = description

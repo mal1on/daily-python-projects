@@ -5,8 +5,10 @@ from collections import Counter
 
 
 def main():
-    '''Takes a block of text provided by the user, analyzes it, and
-     provides useful statistics about the text to the user.'''
+    '''
+    Takes a block of text provided by the user, analyzes it, and
+    provides useful statistics about the text to the user.
+    '''
 
     text = ''
     while not text:
