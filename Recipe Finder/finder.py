@@ -6,9 +6,9 @@ def finder():
     Python program that takes a list of ingredients from the user and
     displays recipes that can be made using those ingredients.
     '''
-    ingredients = input('Enter a list of ingredients separated by commas: ')
-    ingredients = map(str.strip, ingredients.split(','))
-    ingredients = list(map(str.lower, ingredients))
+    ingredients = input('Enter a list of ingredients separated by commas: \
+').lower().split(',')
+    ingredients = list(map(str.strip, ingredients))
 
     with open('recipes.json', 'r') as f:
         recipes = json.load(f)
