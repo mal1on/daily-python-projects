@@ -1,14 +1,6 @@
-# File types
+# Folders
 
-*.txt
-*.docx
-*.rtf
-*.jpg
-*.png
-*.vsdx
-*.pptx
-*.xlsx
-*.csv
+**/tmp/
 
 # Virtual environments
 
