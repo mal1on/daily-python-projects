@@ -1,3 +1,5 @@
+# File types
+
 *.txt
 *.docx
 *.rtf
@@ -7,3 +9,7 @@
 *.pptx
 *.xlsx
 *.csv
+
+# Virtual environments
+
+**/venv/
