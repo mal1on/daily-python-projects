@@ -20,7 +20,9 @@ for web development, data science, and more.",
         "bye": "Bye! Have a great day!",
     }
     print('Chatbot: Hello! I\'m here to chat. Type "bye" to exit.')
+
     while True:
+        known = False
         answer = input('You: ').lower()
         if answer == 'bye':
             print(responses['bye'])
@@ -28,6 +30,9 @@ for web development, data science, and more.",
         for key in responses.keys():
             if key in answer:
                 print(f'Chatbot: {responses[key]}')
+                known = True
+        if not known:
+            print('I\'m not sure I understand.')
 
 
 if __name__ == '__main__':
