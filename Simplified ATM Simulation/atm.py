@@ -6,9 +6,9 @@ def atm():
     money, and withdrawing money.
     '''
     balance = 100
+    print('Welcome to the ATM!\n')
 
     while True:
-        print('Welcome to the ATM!\n')
         print(f'Current Balance: ${balance}')
         print('1. Check Balance')
         print('2. Deposit Money')
@@ -20,16 +20,20 @@ def atm():
                 print(f'Your balance is: ${balance}\n')
             case 2:
                 deposit = int(input('Enter amount to deposit: '))
-                balance += deposit
-                print(f'Deposit successful! Your new balance is: ${balance}')
+                if deposit > 0:
+                    balance += deposit
+                    print(
+                        f'Deposit successful! Your new balance is: ${balance}\n')
+                else:
+                    print('Please enter valid deposit amount\n')
             case 3:
                 withdraw = int(input('Enter amount to withdraw: '))
-                if balance - withdraw < 0:
-                    print('Insufficient account balance\n')
-                else:
+                if 0 < withdraw <= balance:
                     balance -= withdraw
                     print(
-                        f'Withdraw successful! Your new balance is: ${balance}')
+                        f'Withdraw successful! Your new balance is: ${balance}\n')
+                else:
+                    print('Please enter valid withdraw amount\n')
             case 4:
                 break
             case _:
