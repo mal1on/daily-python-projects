@@ -21,7 +21,7 @@ def quote():
 
     if today == 'Monday':
         print("It's Monday! Time for some motivation!\n")
-        print('Motivational quote of the day:')
+        print('💡 Motivational Quote of the Day 💡')
         print(text)
     else:
         print(f'Today is {today}!')
