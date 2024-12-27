@@ -51,7 +51,7 @@ def inventory():
                 for item in stock:
                     count += 1
                     print(
-                        f"{count}. {item['name']} - Quantity: {item['quantity']}, Price: ${item['price']}")
+                        f"{count}. {item['name']} - Quantity: {item['quantity']}, Price: ${item['price']:.2f}")
             case 4:
                 term = input('Enter item name to search: ')
                 check = False
@@ -59,7 +59,7 @@ def inventory():
                     if item['name'] == term:
                         check = True
                         print(
-                            f"Found: {item['name']} - Quantity: {item['quantity']}, Price: ${item['price']}")
+                            f"Found: {item['name']} - Quantity: {item['quantity']}, Price: ${item['price']:.2f}")
                 if not check:
                     print('Item not found.')
             case 5:
