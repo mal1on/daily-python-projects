@@ -1,4 +1,0 @@
-
-2024-12-17,Food,Musaka,12.5
-2024-12-17,Food,Sladoled,7.432
-2024-12-19,Food,Sladki,3.0
