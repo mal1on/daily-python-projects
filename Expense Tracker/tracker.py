@@ -34,7 +34,6 @@ def tracker():
     with open('expenses.txt', 'a+') as file:
         file.seek(0)
         expenses = file.readlines()
-        print(expenses)
         while True:
             option = menu()
             match option:
@@ -53,7 +52,6 @@ def tracker():
                     while True:
                         try:
                             amount = float(input('Enter amount: '))
-                            amount = round(amount, 2)
                             break
                         except ValueError:
                             print('Enter correct amount (int or float).')
@@ -61,16 +59,38 @@ def tracker():
                     file.write(f'\n{date},{cat},{desc},{amount}')
                     print('Expense added successfully!')
                 case 2:
-                    print('--- All Expenses ---')
-                    print(f'{"Date":<15}| {"Category":<10}| {"Description":<20}| {"Amount":<10}|')
-                    print('--------------------------------------------------------------')
+                    print('\n--- All Expenses ---')
+                    print(
+                        f'{"Date":<15}| {"Category":<10}| {"Description":<20}| {"Amount":<10}|')
+                    print(
+                        '--------------------------------------------------------------')
                     for e in expenses:
                         if e != '\n':
                             e = e.split(',')
-                            print(f'{e[0]:<15}| {e[1]:<10}| {e[2]:<20}| {e[3]:<10}|')
+                            print(
+                                f'{e[0]:<15}| {e[1]:<10}| {e[2]:<20}| {float(e[3]):<10.2f}|')
+                case 3:
+                    date = input('Enter date (YYYY-MM-DD): ')
+                    found = []
+                    for e in expenses:
+                        e = e.split(',')
+                        if e[0] == date:
+                            found.append(e)
+                    if found:
+                        print(f'\n--- Expenses for {date} ---')
+                        print(
+                            f'{"Category":<10}| {"Description":<20}| {"Amount":<10}|')
+                        print(
+                        '---------------------------------------------')
+                        for e in found:
+                            print(f'{e[1]:<10}| {e[2]:<20}| {float(e[3]):<10.2f}|')
+                case 4:
+                    total = sum([float(e.split(',')[3]) for e in expenses if e != '\n'])
+                    print(f'\nTotal spending: ${total:.2f}')
                 case 5:
-                    print('Exiting...')
+                    print('Exiting...\n')
                     break
 
 
-tracker()
+if __name__ == '__main__':
+    tracker()
