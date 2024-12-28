@@ -53,12 +53,21 @@ def tracker():
                     while True:
                         try:
                             amount = float(input('Enter amount: '))
+                            amount = round(amount, 2)
                             break
                         except ValueError:
                             print('Enter correct amount (int or float).')
                     expenses.append(f'{date},{cat},{desc},{amount}')
                     file.write(f'\n{date},{cat},{desc},{amount}')
                     print('Expense added successfully!')
+                case 2:
+                    print('--- All Expenses ---')
+                    print(f'{"Date":<15}| {"Category":<10}| {"Description":<20}| {"Amount":<10}|')
+                    print('--------------------------------------------------------------')
+                    for e in expenses:
+                        if e != '\n':
+                            e = e.split(',')
+                            print(f'{e[0]:<15}| {e[1]:<10}| {e[2]:<20}| {e[3]:<10}|')
                 case 5:
                     print('Exiting...')
                     break
