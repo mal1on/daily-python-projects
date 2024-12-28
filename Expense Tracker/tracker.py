@@ -1,4 +1,3 @@
-import os
 from datetime import datetime
 
 
@@ -81,11 +80,13 @@ def tracker():
                         print(
                             f'{"Category":<10}| {"Description":<20}| {"Amount":<10}|')
                         print(
-                        '---------------------------------------------')
+                            '---------------------------------------------')
                         for e in found:
-                            print(f'{e[1]:<10}| {e[2]:<20}| {float(e[3]):<10.2f}|')
+                            print(
+                                f'{e[1]:<10}| {e[2]:<20}| {float(e[3]):<10.2f}|')
                 case 4:
-                    total = sum([float(e.split(',')[3]) for e in expenses if e != '\n'])
+                    total = sum([float(e.split(',')[3])
+                                 for e in expenses if e != '\n'])
                     print(f'\nTotal spending: ${total:.2f}')
                 case 5:
                     print('Exiting...\n')
