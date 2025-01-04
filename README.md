@@ -1,1 +1,1 @@
-# daily-python-projects
+# My dailypythonprojects.substack.com solutions
