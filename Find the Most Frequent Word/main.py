@@ -9,7 +9,7 @@ words = ["love", "peace", "joy", "love", "happiness", "love", "joy", "joy"]
 
 def main():
     '''Main function'''
-    word = max(words, key=lambda word: words.count(word))
+    word = max(words, key=words.count)
     count = words.count(word)
     print(f'The most frequent word is "{word}" appearing {count} times.')
 
